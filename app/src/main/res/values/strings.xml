@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GeminiConnect</string>
+    <string name="please_enter_gemini_key">請輸入 Gemini API Key</string>
+    <string name="come_chat_with_gemini">來跟 Gemini 聊天吧！</string>
+</resources>

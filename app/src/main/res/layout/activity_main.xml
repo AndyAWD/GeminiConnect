@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/am_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/am_key"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#f0f8ff"
+            android:gravity="center"
+            android:hint="@string/please_enter_gemini_key"
+            android:inputType="textPassword"
+            android:textColorHint="#808080"
+            app:layout_constraintBottom_toTopOf="@+id/am_chat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/am_chat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#ffefd5"
+            android:padding="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/am_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/am_key"
+            tools:itemCount="6"
+            tools:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/view_my_chat"
+            tools:spanCount="1" />
+
+        <EditText
+            android:id="@+id/am_input"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#ffdead"
+            android:hint="@string/come_chat_with_gemini"
+            android:padding="8dp"
+            android:textColor="#333333"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/am_send"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/am_chat"
+            app:layout_constraintVertical_weight="1"
+            tools:text="@tools:sample/lorem/random" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/am_send"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#ffdab9"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/icon_send"
+            app:layout_constraintBottom_toBottomOf="@+id/am_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/am_input"
+            app:layout_constraintTop_toTopOf="@+id/am_input" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
